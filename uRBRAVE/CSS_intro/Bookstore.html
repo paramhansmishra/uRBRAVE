@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- swiperjs cdn link  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- My custom css file  -->
+    <link rel="stylesheet" href="bookstore.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>BookWorms-The Online Store </title>
+</head>
+
+<body>
+   
+    <div class="offers">
+        <p id="headline">60% Discounted Price on Buying 3 Book Of Same Author/Publication</p>
+        <blockquote>
+            <p id = "quote" class="quotes" onload="newQuote()">"I have far more respect for the person with a single idea who gets there than one with a thousand ideas and does nothing." -Thomas Edison</p>
+        </blockquote>
+        <a onclick="newQuote()" class="btn" id="quoteBtn">Next quote</a>
+    </div>
+        
+    <!-- header & navbar -->
+    <header class="header">
+        <!-- <p id="account"><span class="account" id="user">User</span></p> -->
+        <hr>
+        <div class="clogo">
+
+            <a href="#" class="logo"> <i class="fas fa-book"></i> Book Worms</a>
+
+            <form action="" class="search-book">
+                <input type="search" name="" placeholder="search book..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div id="search-button" class="fas fa-search"></div>
+                <a href="/uRBRAVE/CSS_intro/cart.html" class="fas fa-shopping-cart" id="cartpage"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <div id="login-button" class="fas fa-user"></div>
+            </div>
+        </div>
+        <div class="headerline-2">
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#Garden">Garden</a>
+                <a href="#featured">Featured</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#contacts">Contacts</a>
+            </nav>
+        </div>
+        <!-- <div class="eyes">
+            <img src="oie_transparent.png" alt="">
+         </div> -->
+    </header>
+    <!-- header ends -->
+    <!-- bottom navbar start -->
+    <nav class="bottom-navbar">
+        <a href="#home" class="fas fa-home"></a>
+        <a href="#Garden" class="fas fa-list"></a>
+        <a href="#featured" class="fas fa-tags"></a>
+        <a href="#reviews" class="fas fa-comments"></a>
+        <a href="#blogs" class="fas fa-blog"></a>
+    </nav>
+    <!-- main -->
+    <main>
+        <!-- login form -->
+        <div class="login-form-container">
+            <!-- close login window -->
+            <div id="close-login-btn" class="fas fa-times">
+    
+            </div>
+            <form action="">
+                <!-- sign-in  -->
+                <h3>Sign-in/Sign-up</h3>
+                <span>User Email</span>
+                <input type="email" name="" placeholder="enter your email" id="userEmail">
+                <span>Username</span>
+                <input type="text" name="" placeholder="enter your email" id="userName">
+                <span>password</span>
+                <input type="password" name="" placeholder="enter your password" id="userPassword">
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="remember-me">
+                    <label for="remember-me">Remember-me</label>
+                    <br><br>
+                </div>
+                <!-- <button id="signUpButton">Sign-up</button>
+                <button id="signInButton">Sign-in </button> -->
+                <input type="submit" value="Sign-up" id="signUpButton" class="btn">
+                <input type="submit" value="Sign-in" id="signInButton" class="btn">
+            </form>
+        </div>
+
+
+                <!-- <p>XD 4got password? <a href="#">Lol click here...</a></p> -->
+                <!-- signup 
+    
+                    
+                    <h3>Sign-up</h3>
+                <p> Lets make an account for you</p>
+                <span>Username</span>
+                <input type="text" placeholder="Entre your name" id="name">
+                <span>Email</span>
+                <input type="email" name="" placeholder="enter your email" id="email">
+                <span>create password</span>
+                <input type="password" placeholder="enter password (> 7 symbols)" id="password">
+                <span>confirm password</span>
+                <input type="password" name="" placeholder="re-enter above password" id="re-password">
+                <br>
+                 <button onclick="register()">Register</button> -->
+
+        <!-- login end  -->
+        <!-- backupcode -->
+                    <!-- <div class="login-form-container">
+                close login window 
+                <div id="close-login-btn" class="fas fa-times">
+
+                </div>
+            <form action="">
+                 sign-in 
+                <h3>Sign-in</h3>
+                <span>Username</span>
+                <input type="email" name="" placeholder="enter your email" id="userEmail">
+                <span>password</span>
+                <input type="password" name="" placeholder="enter your password" id="userPassword">
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="remember-me">
+                    <label for="remember-me">Remember-me</label>
+                <br><br>
+                </div>
+                <button id="signUpButton">Sign-up</button> 
+                <button id="signInButton">Sign-in </button>
+                 <input type="submit" value="check.." id="login" class="btn"> -->
+        <!-- <p>XD 4got password? <a href="#">Lol click here...</a></p> -->
+        <!-- signup 
+
+                
+            <h3>Sign-up</h3>
+            <p> Lets make an account for you</p>
+            <span>Username</span>
+            <input type="text" placeholder="Entre your name" id="name">
+            <span>Email</span>
+            <input type="email" name="" placeholder="enter your email" id="email">
+            <span>create password</span>
+            <input type="password" placeholder="enter password (> 7 symbols)" id="password">
+            <span>confirm password</span>
+            <input type="password" name="" placeholder="re-enter above password" id="re-password">
+            <br>
+            <button onclick="register()">Register</button> 
+            
+        </form>
+    </div> -->
+
+
+
+        <!-- home section start -->
+        <section class="home" id="home">
+            <div class="row">
+
+                <div class="swiper books-slider">
+                    <div class="swiper-wrapper">
+                        <a href="https://www.yumpu.com/xx/document/read/60614953/pdf-download-einstein-his-life-and-universe-free-online" target="_blank" class="swiper-slide"><img src="/uRBRAVE/Eintein.jpg" alt="Error-404"></a>
+                        <a href="https://www.kkoworld.com/kitablar/Mario_Puzo-The_Godfather_eng.pdf" target="_blank" class="swiper-slide"><img src="/uRBRAVE/download.jpg" alt="Error-404"></a>
+                        <!-- <a href="#"><img src="/uRBRAVE/download (2).jpg" alt="Error-404"></a> -->
+                        <a href="https://d-pdf.com/book/113/read" target="_blank" class="swiper-slide"><img src="/uRBRAVE/featured/download.jpg" alt="Error-404"></a>
+                        <a href="https://vk.com/wall595685486_856" target="_blank" class="swiper-slide"><img src="/uRBRAVE/51XWUyPUoPL.jpg" alt="Error-404"></a>
+                    </div>
+                    <img src="/uRBRAVE/marble-table-counter-top-white-surface-stone-slab-display-products-isolated-background-have-clipping-path-143879067.jpg"
+                        class="stand" alt="">
+                </div>
+                <div class="content">
+                    <h3>Upto 30% Off</h3>
+                    <p id="book" class="bookdes" >
+                        <!-- DISCRIPTIONS AND UPDATE PATCHES -->
+                        <a onclick="nextBook()" id="bookBtn" class="btn">Click to load books discription</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- home section ends  -->
+
+        <!-- icons section starts  -->
+        <section class="icons-container">
+            <div class="icons">
+                <i class="fas fa-plane"></i>
+                <div class="content">
+                    <h3>Free shipping</h3>
+                    <p>order above ₹500</p>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="fas fa-redo-alt"></i>
+                <div class="content">
+                    <h3>easy returns</h3>
+                    <p>10 days returns</p>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="fas fa-lock"></i>
+                <div class="content">
+                    <h3>Secure payments</h3>
+                    <p>100% secure payment</p>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="fas fa-headset"></i>
+                <div class="content">
+                    <h3>24/7 Support</h3>
+                    <p>Within 10 minutes response</p>
+                </div>
+            </div>
+        </section>
+        <!-- icons section ends  -->
+
+        <!-- featured section start  -->
+
+        <section class="featured" id="featured">
+            <h1 class="heading"><span>featured books/filers</span></h1>
+            <div class="swiper featured-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/Bleach_cover_01.jpg" alt="Error-404">
+                        </div>
+                        <div class="content">
+                            <h3>Bleach </h3>
+                            <div class="price">₹99 <span class="msp">₹399</span></div>
+                            <a href="https://bleach-read.com/" target="_blank" class="btn">Read Now </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/Demon_Slayer_-_Kimetsu_no_Yaiba,_volume_1.jpg.webp"
+                                alt="Error-404">
+                        </div>
+                        <div class="content">
+                            <h3>Demon Slayer </h3>
+                            <div class="price">₹199 <span class="msp">₹599</span></div>
+                            <a href="https://demonslayer-mangaonline.com/" target="_blank" class="btn">Read Now  </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/Hunter_x_Hunter_cover_-_vol1.jpg" alt="Error-404">
+                        </div>
+                        <div class="content">
+                            <h3>Hunter X Hunter </h3>
+                            <div class="price">₹99 <span class="msp">₹449</span></div>
+                            <a href="https://hunterxhuntermanga.online/" target="_blank" class="btn">Read Now  </a>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/download.jpg" alt="Error-404">
+                        </div>
+                        <div class="content">
+                            <h3>Invisible Women</h3>
+                            <div class="price">₹99 <span class="msp">₹399</span></div>
+                            <a href="https://d-pdf.com/book/113/read" target="_blank" class="btn">Read Now </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/One_Piece,_Volume_61_Cover_(Japanese).jpg" alt="Error-404">
+                        </div>
+                        <div class="content">
+                            <h3>One Piece </h3>
+                            <div class="price">₹129 <span class="msp">₹549</span></div>
+                            <a href="https://ww23.1piecemanga.com/" target="_blank" class="btn">add to cart </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        <!-- featured section ends -->
+
+
+
+
+        <!-- newsletter section starts  -->
+
+        <section class="newsletter">
+            <form action="">
+                <h3>Subscribe our newsletter to get Updates of upcoming books and news </h3>
+                <input type="email" name="" id="" class="box" placeholder="enter your email address">
+                <input type="submit" value="subscribe" class="btn">
+            </form>
+        </section>
+
+        <!-- newsletter section ends  -->
+
+
+        <!-- arrivals section start  -->
+        <section class="arrivals" id="arrivals">
+            <h1 class="heading"><span>new arrivals</span></h1>
+
+            <div class="swiper arrivals-slider">
+                <div class="swiper-wrapper">
+
+
+                    <a href="https://comick.app/comic/kindaichi-shonen-no-jikenbo" class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/KindaishiCaseFiles_vol1_Cover.jpg" alt="Error-404">
+                            <div class="content">
+                                <h3>Kindaishi Case Files .vol1</h3>
+                                <div class="price">₹399 <span>₹799</span></div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>Click to read..</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://mobpsycho2manga.com/" class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/mobPsycho100.jpg" alt="Error-404">
+                            <div class="content">
+                                <h3>MobPsycho100</h3>
+                                <div class="price">₹399 <span>₹799</span></div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>Click to read..</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://mashle-manga.online/" target="_blank" class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/Mashle.jpg" alt="Error-404">
+                            <div class="content">
+                                <h3>Mashle : Magic & Muscle</h3>
+                                <div class="price">₹399 <span>₹799</span></div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>Click to read..</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://full-metal-alchemist.online/" class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/Fullmetal123.jpg" alt="Error-404">
+                            <div class="content">
+                                <h3>Fullmetal Alchemist : Brotherhood</h3>
+                                <div class="price">₹399 <span>₹799</span></div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>Click to read..</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://w5.read-attackontitan-manga.com/" class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/featured/Shingeki_no_Kyojin_manga_volume_1.jpg" alt="Error-404">
+                            <div class="content">
+                                <h3>Attack On Titans .vol1</h3>
+                                <div class="price">₹399 <span>₹799</span></div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>Click to read..</span>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- arrivals section ends  -->
+
+
+
+        <!-- deal section start  -->
+
+        <section class="deal">
+            <div class="content">
+                <h3>deal of the Week</h3>
+                <h1>upto 60% Off</h1>
+                <p>
+                    <h4>Eintien: His Life and Universe</h4> <br>
+                    By the author of the acclaimed bestsellers Benjamin Franklin and Steve Jobs, this is the definitive biography of Albert Einstein.
+                    <br>
+                    How did his mind work? What made him a genius? Isaacson’s biography shows how his scientific imagination sprang from the rebellious nature of his personality. His fascinating story is a testament to the connection between creativity and freedom.
+                    <br>
+                    Based on newly released personal letters of Einstein, this book explores how an imaginative, impertinent patent clerk—a struggling father in a difficult marriage who couldn’t get a teaching job or a doctorate—became the mind reader of the creator of the cosmos, the locksmith of the mysteries of the atom, and the universe. His success came from questioning conventional wisdom and marveling at mysteries that struck others as mundane. This led him to embrace a morality and politics based on respect for free minds, free spirits, and free individuals. <br>
+                    
+                    These traits are just as vital for this new century of globalization, in which our success will depend on our creativity, as they were for the beginning of the last century, when Einstein helped usher in the modern age.  <br></p>
+                <a href="#" class="btn">Shop now</a>
+            </div>
+
+            <div class="image">
+                <img src="/uRBRAVE/Eintein.jpg" alt="">
+            </div>
+        </section>
+
+        <!-- deal section ends -->
+
+
+
+
+        <!-- Reviews section start  -->
+        <section class="reviews" id="reviews">
+            <h1 class="heading"><span>client's reviews</span></h1>
+            <div class="swiper reviews-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>TXRUN</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>SRIKANT</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>POOJA</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>AMAAN MALIk</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>ROHAN</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>ECLAIRS</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box">
+                        <div class="userdp">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>PARAM</h3>
+                        <p>Dummy code again as review > Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Assumenda debitis totam unde et placeat voluptate suscipit itaque corrupti culpa velit </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reviews section end -->
+
+
+
+
+
+        <!-- blog section start  -->
+        <section class="blogs" id="blogs">
+            <h1 class="heading"><span>Our Blogs</span></h1>
+            <div class="swiper blog-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/blog/gaming-laptops-200x135.jpeg" alt="Err-404"> <!--blog img-->
+                            <div class="content">
+                                <h3>The Best Gaming Laptops of 2023(yet) </h3>
+                                <p>The Sony Playstation 5 and Xbox Series X will launch this coming 2023. They're quite
+                                    powerful but nothing can top the raw processing capabilities and speed of a good PC
+                                    rig.
+                                    Fortunately, you can take PC gaming on the go. You simply need to get the right
+                                    gaming laptops that come with all the built-in power necessary.
+                                    Not sure which ones to invest in? These aren't cheap, after all.
+                                    Don't worry, we've got a list here for you. </p><a
+                                    href="https://10desires.org/the-best-gaming-laptops/#generate" class="btn">click
+                                    here.. </a>
+                            </div>
+                        </div>
+                    </div> <br>
+                    <div class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE/blog/Best-Ergonomic-Office-Chairs-Under-200-768x420.jpg" alt="Err-404">
+                            <!--blog img-->
+                            <div class="content">
+                                <h3>Top 10 Best Ergonomic Office Chairs Under $200 </h3>
+                                <p>Are you looking for a comfortable office chair that won't break the bank? Look no
+                                    further! Here are the top 10 best ergonomic office chairs under $200 that are
+                                    perfect for your home or work office.
+                                </p><a href="https://10desires.org/best-ergonomic-office-chairs-under-200/"
+                                    class="btn">click here.. </a>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE//blog/Best-Smartwatches-for-iPhone.jpg" alt="Err-404"> <!--blog img-->
+                            <div class="content">
+                                <h3>5 Best Smartwatches in 2023 </h3>
+                                <p>Smartwatches are becoming increasingly popular among tech-savvy individuals, and with
+                                    good reason. These small yet powerful devices can do everything from tracking your
+                                    fitness to sending text messages and making phone calls, all from the convenience of
+                                    your wrist. If you're an Android user looking to invest in a smartwatch, there are
+                                    many options on the market to choose from. In this comprehensive guide, we'll take a
+                                    look at some of the best smartwatches for Android users in 2023.</p>
+                                <a href="https://10desires.org/best-smartwatches-for-iphone/" class="btn">click here..
+                                </a>
+                            </div>
+                        </div>
+                    </div> <br>
+                    <div class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE//blog/electricshavers-200x135.jpg" alt="Err-404"> <!--blog img-->
+                            <div class="content">
+                                <h3>The Best Electric Shavers of 2023 </h3>
+                                <p>Gone are the days of using a single blade and blade holder to shave. In today's age,
+                                    we have even modernised our razors.
+                                    However, many men and women still struggle with razor bumps and painful razor burns.
+                                    They can't shave every day, yet they love the feel of a close shave. If you can
+                                    relate to this, an electric shaver may be the best choice for you.
+                                    Electric shavers shave hair so close to the skin that you can maintain a bare face
+                                    if you shave every 1-3 days. If done consistently, you won't ever break the surface
+                                    of the skin. This is how you can avoid nasty in-grown hairs, bumps, and burns.
+                                    Convinced you need an electric shaver, but don't know how to start the buying
+                                    process? Keep reading for our buying guide and an overview of the best shavers of
+                                    2023.</p>
+                                <a href="https://10desires.org/best-electric-shavers/" class="btn">click here.. </a>
+                            </div>
+                        </div>
+                    </div> <br>
+                    <div class="swiper-slide box">
+                        <div class="image">
+                            <img src="/uRBRAVE//blog/best-fps-mouse-20220615-medium-768x432.jpg" alt="Err-404">
+                            <!--blog img-->
+                            <div class="content">
+                                <h3>Top 10 Best FPS Gaming Mouse for 2023: Find Your Perfect Mouse for Your Next Game
+                                </h3>
+                                <p>Are you an avid FPS gamer looking for the perfect mouse for your next game? Look no
+                                    further than this list of the top 10 best FPS gaming mice for 2023. We've compiled a
+                                    list of the best wireless, best designed, and best budget FPS mice to help you find
+                                    the right one for your needs. Even if you're only 5 years old, you'll be able to
+                                    understand why these mice are the best for your FPS gaming needs.</p>
+                                <a href="https://10desires.org/best-fps-mouse/" class="btn">click here.. </a>
+                            </div>
+                        </div>
+                    </div> <br>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- blog section ends -->
+    </main>
+
+
+    <!-- footer  -->
+
+
+    <footer>
+        <section class="footer" id="contacts">
+            <div class="box-container">
+                <div class="box">
+                    <h3>our locations :</h3>
+                    <a href="https://goo.gl/maps/UQcsbz3MdHzBhKzL6"> <i class="fas fa-map-marker-alt"></i> India
+                        (Punjab)</a> <br>
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe class="gmap_iframe" width="80%" frameborder="0" scrolling="no"
+                                marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=160&amp;height=171&amp;hl=en&amp;q=Malout MIMIT&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                                href="https://mimitmalout.ac.in/" target="_blank">MIMIT-malout</a></div>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: left;
+                                width: 100%;
+                                height: 171px;
+                            }
+
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                width: 100%;
+                                height: 171px;
+                            }
+
+                            .gmap_iframe {
+                                height: 171px !important;
+                            }
+                        </style>
+                    </div>
+                    <a href="https://mimitmalout.ac.in/" target="_blank">MIMIT-malout</a>
+                </div>
+                <div class="box">
+                    <h3>Contact Us on?</h3>
+                    <a href="#"> <i class="fa-solid fa-envelope fa-bounce"></i> param110045@gmail.com</a>
+                </div>
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="#home"> <i class="fas fa-arrow-right"></i>home</a>
+                    <a href="#featured"> <i class="fas fa-arrow-right"></i>featured</a>
+                    <a href="#arrivals"> <i class="fas fa-arrow-right"></i>arrivals</a>
+                    <a href="#reviews"> <i class="fas fa-arrow-right"></i>reviews</a>
+                    <a href="#blogs"> <i class="fas fa-arrow-right"></i>blogs</a>
+                </div>
+            </div>
+        </section>
+        <div class="footerimg">
+            <img src="/uRBRAVE/CSS_intro/desktop-skyline.webp" alt="Err-404">
+        </div>
+    </footer>
+
+    
+    <!-- my bookstore.js link  -->
+<!-- firebase -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    import { getDatabase, ref, set, onValue } from "firebase/database";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+    // import { getDatabase } from "firebase/database";
+   
+   
+    //search items 
+    import algoliasearch from 'https://cdn.jsdelivr.net/npm/algoliasearch@4.17.1/dist/algoliasearch-lite.esm.browser.js';
+
+    // default version
+    // import algoliasearch from 'sha256-VKVvE5u6QJMx80lcYZqHzrFBBguzoTJXz9raZh7OiK4=';
+
+    
+    
+    
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCeoD70zuSXHHQf8jVvy6gj95gpLbYPX_w",
+        authDomain: "bookworms-theweb.firebaseapp.com",
+        projectId: "bookworms-theweb",
+        storageBucket: "bookworms-theweb.appspot.com",
+        messagingSenderId: "461359094972",
+        appId: "1:461359094972:web:c1d417ad0edc6c4fdc04b9",
+        measurementId: "G-YPPXZP833E",
+        databaseURL: "https://bookworms-theweb-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+    const database = getDatabase(app);
+    
+    
+//user
+
+    const userEmail = document.querySelector("#userEmail");
+    const userPassword = document.querySelector("#userPassword"); 
+    const signUpButton = document.querySelector("#signUpButton");
+    const signInButton = document.querySelector("#signInButton");
+
+
+
+    const userSignUp = async() => {
+        const signUpEmail = userEmail.value
+        const signUpPassword = userPassword.value;
+        createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            alert("Your Account has been created");
+        })
+        .catch((error) => {
+            const errorCode =  error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage)
+        })
+    }
+    const userSignIn = async() => {
+        const signInEmail = userEmail.value
+        const signInPassword = userPassword.value;
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            alert("Your Account has been logged-In");
+        })
+        .catch((error) => {
+            const errorCode =  error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage)
+        })
+    }
+    
+    // signUpButton.addEventListener('click', userSignUp);
+    // signInButton.addEventListener('click', userSignIn);
+    
+    //add to cart funtionality
+    
+    //search functionality
+    // hello_algolia.js
+const algoliasearch = require('algoliasearch')
+
+// Connect and authenticate with your Algolia app
+const client = algoliasearch('O22VEK5EYQ', '60bc32be7d80c97f4b71bf258c82d368')
+
+// Create a new index and add a record
+const index = client.initIndex('test_index')
+const record1 = { objectID: 1, name: 'Hunter-x-Hunter', cost:'199' }
+const record2 = { objectID:2, name:'Mashel-Magic & Muscle', cost:'199'}
+index.saveObject(record1,record2).wait()
+
+// Search the index and print the results
+index
+  .search(document.getElementById(search-box).value)
+  .then(({ hits }) => console.log(hits[0]))
+
+    
+    
+    
+    
+    
+    
+    
+</script>
+
+<script src="addtocart.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="bookstore.js"></script>
+
+<script>
+    var bookDoc = [
+
+    `\" <h4>Garden of serpents</h4>\n
+    <h6>Journal Information</h6>\n
+Phi Delta Kappan, a professional magazine for educators, features articles on education practice, research, policy, issues, and trends. Frequent topics include school improvement, leadership, standards, accountability, the achievement gap, classroom practice, professional development, teacher education, research, technology and innovations in teaching and learning, state and federal policy, and education and the global economy. The PDK/Gallup poll on public attitudes toward education is published each September. Columns include national education issues, research and development, innovation, thoughts on teaching, legal issues, a variety of international writers, and editorial opinion. The magazine is published eight times a year, September through May.\n <br>
+
+<h6>Publisher Information</h6>\n
+Phi Delta Kappa International, a professional education association, serves P-12 teachers; school–, district–, and state-level administrators; teacher educators and education researchers; education policy makers; and members of the public who want to be active in education issues. PDK offers print and electronic publications, an annual summit on education, worldwide networking, international travel opportunities, and scholarships. Committed to preparing the next generation of educators, PDK is also home to the Future Educators Association\n. <br>
+<a href="https://vk.com/wall595685486_856" target="_blank" class="btn">Read now</a>
+<a onclick="nextBook()" id="bookBtn" class="btn">Next Book</a>
+\"`,
+`\"
+*THE SUNDAY TIMES BESTSELLER* <h4>Invisible Women</h4> <br>
+
+HELL YES. This is one of those books that has the potential to change things – a monumental piece of research Caitlin Moran     <br>
+
+Imagine a world where...    <br>
+
+· Your phone is too big for your hand   
+· Your doctor prescribes a drug that is wrong for your body
+· In a car accident you are 47% more likely to be injured.  <br>
+
+If any of that sounds familiar, chances are you’re a woman. <br>
+
+From government policy and medical research, to technology, workplaces, and the media. Invisible Women reveals how in a world built for and by men we are systematically ignoring half of the population, often with disastrous consequences. Caroline Criado Perez brings together for the first time an impressive range of case studies, stories and new research from across the world that illustrate the hidden ways in which women are forgotten, and the profound impact this has on us all.    <br>
+
+Discover the shocking gender bias that affects our everyday lives. <br>         
+
+A book that changes the way you see the world’ Sunday Times <br>
+
+Revelatory, frightening, hopeful’ Jeanette Winterson <br><br>
+
+**Winner of the Royal Society Insight Investment Science Book Prize 2019** <br>
+**Winner of the Readers' Choice Books Are My Bag Award 2019** <br>
+**Winner of the FT & McKinsey Business Book of the Year 2019 Book of the Year Award 2019** <br>
+**The Times Current Affairs Book of the Year 2019** <br>
+<a href="https://d-pdf.com/book/113/read" target="_blank" class="btn">Read now</a>
+<a onclick="nextBook()" id="bookBtn" class="btn">Next Book</a>
+\"`,
+`\" 
+<h4>Eintien: His Life and Universe</h4> <br>
+By the author of the acclaimed bestsellers Benjamin Franklin and Steve Jobs, this is the definitive biography of Albert Einstein.\n
+<br>
+How did his mind work? What made him a genius? Isaacson’s biography shows how his scientific imagination sprang from the rebellious nature of his personality. His fascinating story is a testament to the connection between creativity and freedom.
+<br>
+Based on newly released personal letters of Einstein, this book explores how an imaginative, impertinent patent clerk—a struggling father in a difficult marriage who couldn’t get a teaching job or a doctorate—became the mind reader of the creator of the cosmos, the locksmith of the mysteries of the atom, and the universe. His success came from questioning conventional wisdom and marveling at mysteries that struck others as mundane. This led him to embrace a morality and politics based on respect for free minds, free spirits, and free individuals.\n <br>
+
+These traits are just as vital for this new century of globalization, in which our success will depend on our creativity, as they were for the beginning of the last century, when Einstein helped usher in the modern age.  <br>
+<a href="https://www.yumpu.com/xx/document/read/60614953/pdf-download-einstein-his-life-and-universe-free-online" target="_blank" class="btn">Read now</a>
+<a onclick="nextBook()" id="bookBtn" class="btn">Next Book</a>
+\"\n`,
+`\"
+ <h4>The Godfather : </h4>
+The Godfather is a crime novel by American author Mario Puzo. Originally published in 1969 by G. P. Putnam's Sons, the novel details the story of a fictional Mafia family in New York City (and Long Island), headed by Vito Corleone, the Godfather. The novel covers the years 1945 to 1955 and includes the back story of Vito Corleone from early childhood to adulthood. <br>
+
+The first in a series of novels, The Godfather is noteworthy for introducing Italian words like consigliere, caporegime, Cosa Nostra, and omertà to an English-speaking audience. It inspired a 1972 film of the same name. Two film sequels, including new contributions by Puzo himself, were made in 1974 and 1990. <br>
+<a href="https://www.kkoworld.com/kitablar/Mario_Puzo-The_Godfather_eng.pdf" target="_blank" class="btn">Read now</a>
+<a onclick="nextBook()" id="bookBtn" class="btn">Next Book</a>
+\"`
+
+    ]
+
+    Math.floor(Math.random() * (max - min - 1)) + min;
+function nextBook(){
+var randomBook = Math.floor(Math.random()*bookDoc.length);
+    document.getElementById('book').innerHTML = bookDoc[randomBook];
+} 
+</script>
+
+
+
+
+<script>
+    var quotes = [
+    '\"Life isn\'t about finding yourself, it is about creating yourself.\"\n\n-George Bernard Shaw',
+    '\"If you are going down the right path and you are willing to keep walking, eventually you\'ll make progress.\"\n-Barrack Obama',
+    '\"I have far more respect for the person with a single idea who gets there than one with a thousand ideas and does nothing.\"\n-Thomas Edison',
+    '\"What is necessary to change a person is to change awareness of himself.\"\n\n-Anonymous',
+    '\"Many people die at the age of 25, but their bodies are not buried until 75.\"\n\n-Benjamin Franklin',
+    '\"If you don\'t get up every morning with a burning desire to do things, you don\'t have enough goals.\"\n-Lou Holtz',
+    '\"The way to learning is to get rid of the arrogance of knowledge.\"\n-Confucius',
+    '\"One can have no smaller or greater master than the mastery of oneself.\"\n-Leonardo Da Vinci',
+    '\"Empty pockets never held anyone back. Only empty heads and hearts can do that.\"\n-Norman Vincent Peale',
+    '\"Great things are not done by impulse, but a series of small things brought together.\"\n-Vincent Van Gogh',
+    '\"Why measure your success by the suggestions of society when you can become a success on your own terms.\"\n-Robin Sharma',
+    '\"A man may imagine things that are false, but he can only undetsand things that are true.\"\n-Isaac Newton',
+    '\"Our fatigue is often caused not by work, but by worry, frustration and resentment.\"\n-Dale Carnegie',
+    '\"True freedom is impossible without a mind made free by discipline.\"\n-Mortimer Adler',
+    '\"Focus is not saying yes to all important things, rather it is saying no to less important things.\"\n-Steve Jobs',
+    '\"Discipline is the bridge between goals and accomplishment.\"\n-Jim Rohn',
+    '\"Success in life comes when you simply refuse to give up, with goals so strong that obstacles, failure and loss only act as motivation.\"\n-Jim Rohn',
+    '\"Be yourself. Everyone else is already taken.\"\n-Oscar Wilde',
+    '\"Be who you are and say what you feel, because those who mind don\'t matter and those who matter don\'t mind.\"\n-Bernard M. Baruch',
+    '\"Imperfection is beauty, madness is genius and it\'s better to be absolutely ridiculous than absolutely boring.\"\n-Marilyn Monroe',
+    '\"When you are content to be simply yourself and don\'t compare or compete, everyone will respect you.\"\n-Lao Tzu',
+    '\"If you are always trying to be ordinary, you will never know how extraordinary you can be.\"\n-Michelangelo',
+    '\"Leadership is solving problems. The day people stop bringing you their problems is the day you have stopped leading them.\"\n-Colin Powell',
+    '\"Start by doing what\'s necessary; then do what\'s possible and suddenly you are doing the impossible.\"\n-Francis of Assisi',
+    '\"It is our choices that show what we truly are, far more than our abilities.\"\n-Albus Dumbledore',
+    '\"It does not do to dwell on dreams and forget to live.\"\n-Mirror of Erised'
+], i=0;
+
+
+Math.floor(Math.random() * (max - min + 1)) + min;
+function newQuote(){
+var randomNumber = Math.floor(Math.random()*quotes.length);
+    document.getElementById('quote').innerHTML = quotes[randomNumber];
+} 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
